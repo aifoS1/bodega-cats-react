@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import CatInput from './components/CatInput';
-import AllCats from './components/AllCats';
+import Body from './components/Body';
 import {Divider} from 'semantic-ui-react';
 import logo from './logo.svg';
 import './App.css';
@@ -14,9 +13,7 @@ class App extends Component {
           <h2>Welcome to Bodega Cats</h2>
           <p>A place to view all the wonderful Bodega Cats you encounter</p>
         </div>
-        <CatInput/>
-        <Divider/>
-        <AllCats/>
+        <Body/>
       </div>
     );
   }
