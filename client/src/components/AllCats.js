@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
 import { Container, Header, Image, Link, Divider } from 'semantic-ui-react'
 
 class AllCats extends Component {
   constructor() {
     super()
-    this.state = {}
-    this.getCats = this.getCats.bind(this)
-    this.cats = [
+    this.state = {cats: [
       {
         id: 1,
         name: 'Lucy',
@@ -29,7 +26,8 @@ class AllCats extends Component {
         lat: 72.9903,
         long: 38.6733
       }
-    ]
+    ]}
+    this.getCats = this.getCats.bind(this)
   }
 
   componentDidMount() {
@@ -37,7 +35,8 @@ class AllCats extends Component {
   }
 
   getCats() {
-    this.setState({cats: this.cats})
+    // this.setState({cats: this.cats})
+    // TODO: ajax or fetch call to api to grab all cats from DB and set state to te
     console.log("I'm getting cats")
   }
 
@@ -47,7 +46,7 @@ class AllCats extends Component {
 
       <Image.Group>
       {
-        this.cats.map((cat) => {
+        this.state.cats.map((cat) => {
 
         return <Image widths={cat.length}
                   key={cat.id}
